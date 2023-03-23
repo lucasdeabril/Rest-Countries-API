@@ -14,17 +14,30 @@ async function pais(){
 
     data.map((post) => {
         const card = document.createElement('div')
-        const title = document.createElement('h2')
-        const body = document.createElement('p')
-        const link = document.createElement('p')
-
-        title.innerText = post.name['common']
-        body.innerText = post.population
-        link.innerText = post.capital
-        card.appendChild(title)
-        card.appendChild(body)
-        card.appendChild(link)
+        const nome_pais = document.createElement('h2')
+        const flag = document.createElement('img')
+        const population = document.createElement('p')
+        const capital = document.createElement('p')
+        card.classList.add('card')
+        const regiao = document.createElement('p')
+        
+        
+        const flagsrc = post.flags['png']
+        regiao.innerText = `Region: ${post.region}`
+        flag.src= flagsrc
+        nome_pais.innerText = post.name['common']
+        population.innerText = `Population: ${post.population}`
+        capital.innerText = `Capital: ${post.capital}`
+        
+        card.appendChild(flag)
+        card.appendChild(nome_pais)
+        card.appendChild(population)
+        card.appendChild(regiao)
+        card.appendChild(capital)
+        
         div.appendChild(card)
+
+        
     })
 }
 

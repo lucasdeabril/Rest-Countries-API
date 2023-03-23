@@ -31,3 +31,13 @@ body{
 main{
     background-color: bisque;
 }
+.loading{
+    display: flex;
+    width: 100%;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.card{
+    margin-top: 2rem;
+}
