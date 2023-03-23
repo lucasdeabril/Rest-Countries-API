@@ -28,3 +28,6 @@ body{
 .hide{
     display: none;
 }
+main{
+    background-color: bisque;
+}

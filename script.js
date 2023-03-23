@@ -1,6 +1,6 @@
 const url = 'https://restcountries.com/v3.1/all'
-const load = document.querySelector('.loading')
 
+const div = document.querySelector('div')
 async function pais(){
     
 
@@ -10,17 +10,21 @@ async function pais(){
     const data = await response.json()
     console.log(data)
     
-    load.classList.add('hide')
+    
 
     data.map((post) => {
-        const div = document.createElement('div')
+        const card = document.createElement('div')
         const title = document.createElement('h2')
         const body = document.createElement('p')
-        const link = document.createElement('a')
+        const link = document.createElement('p')
 
-        title.innerText = post.name;
-        body.innerText = post.capital
-        link.innerText = 'saber mais'
+        title.innerText = post.name['common']
+        body.innerText = post.population
+        link.innerText = post.capital
+        card.appendChild(title)
+        card.appendChild(body)
+        card.appendChild(link)
+        div.appendChild(card)
     })
 }
 
