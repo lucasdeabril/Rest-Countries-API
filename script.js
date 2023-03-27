@@ -1,6 +1,8 @@
 const url = 'https://restcountries.com/v3.1/all'
+const div = document.querySelector('.loading')
+const containerCopia = document.querySelector('.container-copia');
 
-const div = document.querySelector('div')
+
 async function pais(){
     
 
@@ -13,18 +15,23 @@ async function pais(){
     
 
     data.map((post) => {
-        const card = document.createElement('div')
-        const nome_pais = document.createElement('h2')
-        const flag = document.createElement('img')
-        const population = document.createElement('p')
-        const capital = document.createElement('p')
+        
+        var card = document.createElement('div')
+        var nome_pais = document.createElement('h2')
+        var flag = document.createElement('img')
+        var population = document.createElement('p')
+        var capital = document.createElement('p')
+        var regiao = document.createElement('p')
+        
         card.classList.add('card')
-        const regiao = document.createElement('p')
+        card.classList.add('container')
         
         
+        flag.classList.add('flag')
+
         const flagsrc = post.flags['png']
         regiao.innerText = `Region: ${post.region}`
-        flag.src= flagsrc
+        flag.src= flagsrc;
         nome_pais.innerText = post.name['common']
         population.innerText = `Population: ${post.population}`
         capital.innerText = `Capital: ${post.capital}`
@@ -34,11 +41,21 @@ async function pais(){
         card.appendChild(population)
         card.appendChild(regiao)
         card.appendChild(capital)
-        
         div.appendChild(card)
 
         
+        
     })
 }
-
 pais()
+
+// Eventos
+
+
+
+
+
+
+
+
+
